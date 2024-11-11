@@ -1,0 +1,39 @@
+linters:
+  enable:
+    - gofmt
+    - govet
+    - gosimple
+    - staticcheck
+    - ineffassign
+    - misspell
+    - unconvert
+    - goconst
+    - goimports
+
+run:
+  # Don't lint test files
+  tests: false
+  # Skip directories
+  skip-dirs:
+    - vendor
+    - third_party
+  # Timeout for analysis
+  timeout: 5m
+  # Only lint project files
+  modules-download-mode: readonly
+
+# Output configuration options
+output:
+  # Format: colored-line-number|line-number|json|tab|checkstyle|code-climate|junit-xml|github-actions
+  format: colored-line-number
+  # Print lines of code with issue
+  print-issued-lines: true
+  # Print linter name in the end of issue text
+  print-linter-name: true
+
+# Issues configuration options
+issues:
+  exclude-use-default: false
+  max-issues-per-linter: 0
+  max-same-issues: 0
+  new: false
